@@ -37,4 +37,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * Gets all rss-feeds from the user
+     */
+    public function feeds(){
+        return $this->belongsToMany('App\RSSFeed');
+    }
 }
