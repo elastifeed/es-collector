@@ -13,6 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
-//Route::middleware('auth:api')->get('/user', function (Request $request) {
-//    return $request->user();
-//});
+Route::group(['prefix' => 'v1'], function (){
+
+    Route::post('/login', 'API\UserAuthController@login');
+    Route::post('/register', 'API\UserAuthController@register');
+
+    Route::group(['middleware' => 'auth:api'], function (){
+        Route::get('/me', 'API\UserAuthController@getCurrentUser');
+    });
+
+});
+
+Route::any('/{any}', function (){
+    return \App\Helpers\Error::new('Page not found');
+})->where('any', '.*');
+
+//Route::post('login', 'API\UserAuthController@login');
+//Route::post('login', 'API\UserAuthController@login');
