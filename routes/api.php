@@ -27,6 +27,7 @@ Route::group(['prefix' => 'v1'], function (){
         // RSS-Feed Endpoints
         Route::get('/feeds', 'API\FeedController@getAll');
         Route::post('/feeds', 'API\FeedController@insertNew');
+        Route::delete('/feeds/{id}', 'API\FeedController@removeFeed')->where('id', '[0-9]+');
     });
 
 });
