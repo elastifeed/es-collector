@@ -41,3 +41,12 @@ Requires a `POST` request containing the following fields:
 
 ### `/api/v1/me`
 Returns the current authenticated user object. 
+
+### `/api/v1/feeds` *get*
+Returns the RSS-Feeds of the current authenticated user.
+
+### `/api/v1/feeds` *post*
+Adds a new RSS-Feed to the current authenticated user.
+Requires a POST request containing the following field:
+- link \
+  Link to the `.rss`resource
