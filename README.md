@@ -50,3 +50,20 @@ Adds a new RSS-Feed to the current authenticated user.
 Requires a POST request containing the following field:
 - link \
   Link to the `.rss`resource
+
+### `/api/v1/feeds/{id}` *delete*
+Removes an existing RSS-Feed from the current authenticated user.
+
+### `/api/v1/categories` *get*
+Returns all categories defined by the current authenticated user.
+
+### `/api/v1/categories` *post*
+Adds a new category to the current authenticated user
+Requires a POST request containing the following field:
+- name \
+  Category title string
+ - meta \
+  JSON object containing the categories meta-data
+
+### `/api/v1/categories/{id}` *delete*
+Removes an existing category from the current authenticated users.
