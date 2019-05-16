@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\App;
 use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
@@ -44,5 +45,12 @@ class User extends Authenticatable
      */
     public function feeds(){
         return $this->belongsToMany('App\RSSFeed');
+    }
+
+    /**
+     * Gets all categories defined by the user
+     */
+    public function categories(){
+        return $this->hasMany(Category::class);
     }
 }
