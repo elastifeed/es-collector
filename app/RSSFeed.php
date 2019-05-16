@@ -21,6 +21,6 @@ class RSSFeed extends Model
      * Returns all users with this feed
      */
     public function users(){
-        return $this->belongsToMany('App\User');
+        return $this->belongsToMany(User::class);
     }
 }

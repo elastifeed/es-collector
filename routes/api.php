@@ -28,6 +28,11 @@ Route::group(['prefix' => 'v1'], function (){
         Route::get('/feeds', 'API\FeedController@getAll');
         Route::post('/feeds', 'API\FeedController@insertNew');
         Route::delete('/feeds/{id}', 'API\FeedController@removeFeed')->where('id', '[0-9]+');
+
+        // Category Endpoints
+        Route::get('/categories', 'API\CategoryController@getAll');
+        Route::post('/categories', 'API\CategoryController@insertNew');
+        Route::delete('/categories/{id}', 'API\CategoryController@removeCategory')->where('id', '[0-9]+');
     });
 
 });
