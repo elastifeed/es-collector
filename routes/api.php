@@ -5,6 +5,8 @@ use Illuminate\Http\Request;
 // API v1
 Route::group(['prefix' => 'v1'], function (){
 
+    Route::get('/fetch/feeds', 'API\FeedController@getAllWithUsers');
+
     Route::post('/login', 'API\UserAuthController@login');
     Route::post('/register', 'API\UserAuthController@register');
 

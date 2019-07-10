@@ -57,7 +57,7 @@ class FeedController extends Controller{
 
         // If the current user is not yet associated with
         // the feed, he will be attached to it here
-        if (!$feed->users()->get()->contains($currentUser)){
+        if (!$feed->users()->get()->contains($currentUser)) {
             $feed->users()->attach($currentUser);
         }
         return $feed;
@@ -76,7 +76,7 @@ class FeedController extends Controller{
 
         // Returns an error message, if the user does not have
         // the given feed, or the feed does not exist
-        if ($feed == null || !$feed->users()->get()->contains($currentUser)){
+        if ($feed == null || !$feed->users()->get()->contains($currentUser)) {
             return response(Error::new("Feed not found or is not attached to the current user."));
         }
 
@@ -84,7 +84,7 @@ class FeedController extends Controller{
         // and deletes the feed if no more users are attached
         $attachedUsers = $feed->users();
         $attachedUsers->detach($currentUser);
-        if ($attachedUsers->count() === 0){
+        if ($attachedUsers->count() === 0) {
             $feed->delete();
         }
 
@@ -92,5 +92,13 @@ class FeedController extends Controller{
             'error' => false,
             'feed' => $feed
         ];
+    }
+
+    /**
+     * Returns a List of all RSSFeeds with the attached users
+     * @return RSSFeed[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function getAllWithUsers(){
+        return RSSFeed::with('users:id')->select('id', 'link', 'hashedLink')->get();
     }
 }
