@@ -23,6 +23,10 @@ php artisan serve
 ```
 
 ## Endpoints
+
+### `/api/v1/fetch/feeds`
+Returns a List of all currently registered RSS-Feeds with the individual subscribed users.
+
 ### `/api/v1/register`
 Allows for user registration. Requires a `POST` request containing the following fields:
 - **email** \
