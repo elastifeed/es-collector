@@ -31,7 +31,7 @@ class CategoryController extends Controller{
 
         $validator = Validator::make($request->all(), [
             'name' => 'required',
-            'meta' => 'required'
+            'meta' => 'filled'
         ]);
 
         // If valdiation fails respond with an error object
@@ -46,10 +46,15 @@ class CategoryController extends Controller{
             ]), 400);
         }
 
+        $meta = $request->get('meta');
+        if ($meta === null){
+            $meta = [];
+        }
+
         // Create and save the new category
         return $user->categories()->create([
             'name' => $request->get('name'),
-            'meta' => $request->get('meta')
+            'meta' => $meta
         ]);
     }
 

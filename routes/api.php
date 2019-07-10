@@ -2,19 +2,10 @@
 
 use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
-
 // API v1
 Route::group(['prefix' => 'v1'], function (){
+
+    Route::get('/fetch/feeds', 'API\FeedController@getAllWithUsers');
 
     Route::post('/login', 'API\UserAuthController@login');
     Route::post('/register', 'API\UserAuthController@register');
@@ -40,5 +31,5 @@ Route::group(['prefix' => 'v1'], function (){
 
 // API 404 error
 Route::any('/{any}', function (){
-    return \App\Helpers\Error::new('Page not found');
+    return \App\Helpers\Error::new('Endpoint not defined');
 })->where('any', '.*');

@@ -14,4 +14,8 @@ class Category extends Model
     protected $casts = [
       'meta' => 'array'
     ];
+
+    protected $hidden = [
+        'pivot'
+    ];
 }
