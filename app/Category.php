@@ -16,6 +16,8 @@ class Category extends Model
     ];
 
     protected $hidden = [
-        'pivot'
+        'pivot',
+        'user_id',
+        'updated_at'
     ];
 }

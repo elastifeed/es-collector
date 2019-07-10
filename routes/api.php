@@ -24,6 +24,9 @@ Route::group(['prefix' => 'v1'], function (){
         Route::get('/categories', 'API\CategoryController@getAll');
         Route::post('/categories', 'API\CategoryController@insertNew');
         Route::delete('/categories/{id}', 'API\CategoryController@removeCategory')->where('id', '[0-9]+');
+
+        // Page Endpoints
+        Route::post('/page', 'API\PageController@pushNew');
     });
 
 });
