@@ -17,7 +17,9 @@ class RSSFeed extends Model
     ];
 
     protected $hidden = [
-        'hidden'
+        'user_id',
+        'pivot',
+        'updated_at'
     ];
 
     /**
