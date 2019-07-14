@@ -1,14 +1,18 @@
+@import './settings.scss';
+@import "~normalize.css";
+@import "~select2/dist/css/select2.css";
+@import "sff";
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// Init sff
+@include sff();
 
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// Load Style-Components
+@import './modules/_general.scss';
+@import './modules/button.scss';
+@import './modules/feed.scss';
+@import './modules/field.scss';
+@import './modules/login-form.scss';
+@import './modules/page-preview.scss';
+@import './modules/select2.scss';
+@import './modules/success-message.scss';
+@import './modules/wrapper.scss';

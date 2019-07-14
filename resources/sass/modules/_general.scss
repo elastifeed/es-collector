@@ -1,0 +1,26 @@
+#root,
+body,
+html {
+    height: 100%;
+}
+
+
+body {
+    background: $bg;
+}
+
+select {
+    width: 100%;
+}
+
+input,
+textarea,
+form button,
+select {
+    border-radius: 4px;
+    box-shadow: 0 3px 6px rgba(#000, 0.16);
+}
+
+.relative{
+    position: relative;
+}

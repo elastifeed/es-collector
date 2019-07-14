@@ -29,6 +29,11 @@ Route::group(['prefix' => 'v1'], function (){
         Route::post('/page', 'API\PageController@pushNew');
     });
 
+    // System Endpoints
+    Route::group(['middleware' => 'cors'], function (){
+        Route::post('/proxy', 'API\ProxyController@fetchUrl');
+    });
+
 });
 
 

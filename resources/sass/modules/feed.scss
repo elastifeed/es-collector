@@ -1,0 +1,36 @@
+.feed {
+    &__item {
+        position: relative;
+        padding-left: 30px;
+        padding-bottom: 30px;
+
+        &::before,
+        &::after {
+            content: '';
+            background: $c1;
+            position: absolute;
+            top: 0.25em;
+        }
+
+        &::before {
+            width: 9px;
+            height: 9px;
+            left: 0;
+            border-radius: 50%;
+        }
+
+        &::after {
+            width: 1px;
+            height: 100%;
+            left: 4px;
+        }
+
+        &:last-child {
+            padding-bottom: 10px;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

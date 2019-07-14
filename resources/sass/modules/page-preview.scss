@@ -1,0 +1,30 @@
+.page-preview {
+    border: 1px solid rgba(#000, 0.13);
+    box-shadow: 0 15px 35px rgba(#000, 0.13);
+    display: block;
+    @media (min-width: getSize('x-large')) {
+        margin-left: 60px;
+    }
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+iframe {
+    &.page-preview {
+        pointer-events: none;
+        width: 100%;
+        height: 100vmin;
+        @media (min-width: getSize('x-large')) {
+            position: absolute;
+            top: 0;
+            left: calc(50% + 60px);
+            transform: scale(0.5) translate(-50%, -100%);
+            transform-origin: left;
+            width: 200%;
+            height: 1000px;
+        }
+    }
+}

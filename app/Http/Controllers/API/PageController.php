@@ -15,21 +15,17 @@ class PageController extends Controller{
 
         $validator = Validator::make($request->all(), [
             'url' => 'required',
-            'categories' => 'filled',
-            'tags' => 'filled'
+            'categories' => 'filled'
         ]);
         if ($validator->fails()) {
             return response(Error::new($validator->getMessageBag()->toArray()), 400);
         }
 
         $cats = $request->get('categories');
-        $tags = $request->get('tags');
 
         // Handle optional fields
         if (is_null($cats))
             $cats = [];
-        if (is_null($tags))
-            $tags = [];
 
         // Fill categories with the model-object
         $cats = array_map(function($name){
@@ -38,8 +34,7 @@ class PageController extends Controller{
 
         $data = [
             'url' => $request->get('url'),
-            'categories' => $cats,
-            'tags' => $tags
+            'categories' => $cats
         ];
 
         // Push data
