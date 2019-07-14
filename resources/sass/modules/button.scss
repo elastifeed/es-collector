@@ -1,0 +1,9 @@
+.button {
+    font-weight: bold;
+
+    &.prim {
+        box-shadow: 0 3px 6px rgba(#000, 0.16);
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+    }
+}

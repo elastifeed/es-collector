@@ -1,0 +1,46 @@
+.success-message {
+    display: flex;
+    justify-content: center;
+
+    &__content {
+        transition: all 0.2s;
+        background: $white;
+        box-shadow: 0 3px 6px rgba(#000, 0.16);
+        border-radius: 10px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        position: relative;
+        text-align: center;
+        padding: 125px 30px 30px 30px;
+
+        &::before {
+            transition: all 0.2s;
+            content: '';
+            background: url('../../img/check-circle.svg') no-repeat;
+            background-size: contain;
+            width: 75px;
+            height: 75px;
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
+
+        @media (min-width: getSize('medium')) {
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        @media (min-width: getSize('large')) {
+            text-align: left;
+            padding: 30px 45px 30px 120px;
+            &::before {
+                top: 50%;
+                left: 30px;
+                transform: translate(0, -50%);
+                width: 55px;
+                height: 55px;
+            }
+        }
+    }
+
+}

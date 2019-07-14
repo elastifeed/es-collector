@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    padding: 30px 15px;
+    overflow: hidden;
+    @media (min-width: getSize('large')) {
+        padding: 30px;
+    }
+
+    &__content {
+        width: 100%;
+        max-width: 1100px;;
+    }
+}

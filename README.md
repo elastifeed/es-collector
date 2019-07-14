@@ -8,12 +8,17 @@ First copy the example `.env.example` file and fill the database credentials
 cp .env.example .env
 vim .env
 ```
-Then execute:
+Install PHP dependencies:
 ```bash
 composer install
 php artisan key:generate
 php artisan migrate
 php artisan passport:install
+```
+Install HTML/JavaScript dependencies:
+```bash
+npm install
+npm run prod
 ```
 
 ## Run a PHP development Server
@@ -88,5 +93,3 @@ Requires a **POST**-Request containing the following fields:
   Link as a string to push into the system.
 - `categories` (optional) \
   array of strings containing the pages category **names**
-- `tags` (optional) \
-   array of strings containing the pages tags
