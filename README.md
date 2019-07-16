@@ -3,7 +3,7 @@
 **!!! DEVELOPMENT !!!** deployment of the central collector system
 
 ## Installation
-First copy the example `.env.example` file and fill the database credentials
+First copy the example `.env.example` file and fill the database credentials and replace `SYSTEM_PUSH_PAGE` with the appropriate URL.
 ```bash
 cp .env.example .env
 vim .env
