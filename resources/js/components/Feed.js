@@ -49,7 +49,6 @@ class Feed extends React.Component{
     handleSubmit(){
         ApiCalls.pushFeed(this.state.token, this.state.url)
             .then(res => {
-                console.log(res.data);
                 this.state.success(this.state.url)
             })
             .catch(console.log);

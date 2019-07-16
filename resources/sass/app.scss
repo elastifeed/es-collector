@@ -16,3 +16,45 @@
 @import './modules/select2.scss';
 @import './modules/success-message.scss';
 @import './modules/wrapper.scss';
+
+
+.bookmark-wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__content{
+        width: 100%;
+        max-width: 800px;
+    }
+}
+
+.bookmark{
+    display: inline-block;
+    background: $white;
+    padding: 0.5em 0.7em 0.5em 2.1em;
+    color: $f-color;
+    text-decoration: none;
+    font-size: 1.4rem;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 0 0.3em 0.8em rgba($black, 0.17);
+    transition: all 0.2s;
+    &::before{
+        content: '';
+        background: url('../img/save.svg') no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 50%;
+        left: 0.65em;
+        width: 1em;
+        height: 1em;
+        transform: translateY(-50%);
+    }
+    &:hover{
+        text-decoration: none;
+        color: $f-color;
+        transform: scale(1.05);
+    }
+}
